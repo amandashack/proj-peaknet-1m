@@ -29,6 +29,7 @@ Usage:
 """
 
 import argparse
+import csv
 import json
 import os
 import sqlite3
@@ -84,9 +85,9 @@ def process_experiment_worker(experiment_info: Dict, db_path: str, output_dir: s
         # Add metadata comment to track processing
         metadata = {
             'processed_at': datetime.now().isoformat(),
-            'total_runs': experiment_info['total_runs'],
-            'total_logbook_entries': experiment_info['total_logbook_entries'],
-            'instrument': experiment_info['instrument']
+            'total_runs': experiment_info.get('total_runs', 'unknown'),
+            'total_logbook_entries': experiment_info.get('total_logbook_entries', 'unknown'),
+            'instrument': experiment_info.get('instrument', 'unknown')
         }
 
         with open(output_file, 'a', encoding='utf-8') as f:
@@ -185,8 +186,8 @@ class BatchProcessor:
         FROM Experiment e 
         LEFT JOIN Run r ON e.experiment_id = r.experiment_id 
         LEFT JOIN Logbook l ON r.run_id = l.run_id 
-        WHERE l.content IS NOT NULL 
         GROUP BY e.experiment_id 
+        HAVING COUNT(DISTINCT r.run_number) > 0
         ORDER BY total_logbook_entries DESC
         """
 
@@ -218,8 +219,44 @@ class BatchProcessor:
         output_file = self.get_output_file(experiment_id)
         return output_file.exists() and experiment_id in self.stats.get('processed_list', [])
 
+    def read_experiments_from_csv(self, csv_file: str) -> List[str]:
+        """Read experiment IDs from a CSV file."""
+        csv_path = Path(csv_file)
+        
+        if not csv_path.exists():
+            raise FileNotFoundError(f"CSV file not found: {csv_file}")
+        
+        experiment_ids = []
+        
+        with open(csv_path, 'r', encoding='utf-8') as f:
+            reader = csv.reader(f)
+            
+            # Read header and find experiment_id column
+            try:
+                header = next(reader)
+                if 'experiment_id' not in header:
+                    raise ValueError("CSV file must have an 'experiment_id' column")
+                
+                exp_id_index = header.index('experiment_id')
+                
+                # Read experiment IDs
+                for row_num, row in enumerate(reader, start=2):  # Start at 2 since we consumed header
+                    if len(row) <= exp_id_index:
+                        print(f"Warning: Row {row_num} has insufficient columns, skipping")
+                        continue
+                    
+                    exp_id = row[exp_id_index].strip()
+                    if exp_id:  # Skip empty experiment IDs
+                        experiment_ids.append(exp_id)
+                
+            except StopIteration:
+                raise ValueError("CSV file is empty or has no header")
+        
+        print(f"Read {len(experiment_ids)} experiment IDs from {csv_file}")
+        return experiment_ids
 
-    def process_all_experiments(self, limit: Optional[int] = None, resume: bool = False):
+
+    def process_all_experiments(self, limit: Optional[int] = None, resume: bool = False, csv_file: Optional[str] = None):
         """Process all experiments with parallel processing and progress tracking."""
         print(f"Starting batch processing...")
         print(f"Database: {self.db_path}")
@@ -228,8 +265,18 @@ class BatchProcessor:
         print(f"Parallel jobs: {self.n_jobs}")
         print(f"Batch size: {self.batch_size}")
 
-        # Get all experiments
-        experiments = self.get_all_experiments(limit)
+        # Get experiments either from CSV or database discovery
+        if csv_file:
+            print(f"Using CSV file: {csv_file}")
+            experiment_ids = self.read_experiments_from_csv(csv_file)
+            if limit:
+                experiment_ids = experiment_ids[:limit]
+            # Convert to simplified format for CSV processing
+            experiments = [{'experiment_id': exp_id} for exp_id in experiment_ids]
+        else:
+            print("Processing all experiments from database")
+            experiments = self.get_all_experiments(limit)
+        
         total_experiments = len(experiments)
 
         print(f"Found {total_experiments} experiments with logbook data")
@@ -407,6 +454,8 @@ def main():
                        help=f'Number of parallel jobs (default: {cpu_count()}, use 1 for sequential)')
     parser.add_argument('--batch-size', type=int, default=50,
                        help='Number of experiments to process in each batch (default: 50)')
+    parser.add_argument('--csv-file', type=str,
+                       help='CSV file containing experiment IDs to process (if not specified, processes all experiments in database)')
 
     args = parser.parse_args()
 
@@ -421,7 +470,7 @@ def main():
         else:
             # Connect and process
             processor.connect()
-            processor.process_all_experiments(args.limit, args.resume)
+            processor.process_all_experiments(args.limit, args.resume, args.csv_file)
 
             # Generate summary report
             report = processor.generate_summary_report()
