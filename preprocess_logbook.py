@@ -200,13 +200,14 @@ class LogbookPreprocessor:
 
         return unique_entries
 
-    def create_run_context(self, run_number: int, entries: List[Dict]) -> str:
+    def create_run_context(self, run_number: int, entries: List[Dict], duration_stats: Dict = None) -> str:
         """
         Create a formatted context block for a single run.
 
         Args:
             run_number: The run number
             entries: List of logbook entries for this run
+            duration_stats: Duration statistics for the experiment (optional)
 
         Returns:
             Formatted markdown context for the run
@@ -219,19 +220,26 @@ class LogbookPreprocessor:
         run_start = first_entry.get('run_start', 'Unknown')
         run_end = first_entry.get('run_end', 'Unknown')
 
-        # Calculate duration if possible
+        # Calculate duration with relative context if possible
         duration = "Unknown"
+        duration_sec = 0
         if run_start and run_end and run_start != 'Unknown' and run_end != 'Unknown':
             try:
                 start_dt = datetime.fromisoformat(run_start.replace('Z', '+00:00'))
                 end_dt = datetime.fromisoformat(run_end.replace('Z', '+00:00'))
                 duration_sec = (end_dt - start_dt).total_seconds()
                 if duration_sec < 60:
-                    duration = f"{duration_sec:.1f} seconds"
+                    duration_str = f"{duration_sec:.1f} seconds"
                 elif duration_sec < 3600:
-                    duration = f"{duration_sec/60:.1f} minutes"
+                    duration_str = f"{duration_sec/60:.1f} minutes"
                 else:
-                    duration = f"{duration_sec/3600:.1f} hours"
+                    duration_str = f"{duration_sec/3600:.1f} hours"
+                
+                # Apply duration statistics if available
+                if duration_stats and duration_stats.get('has_data'):
+                    duration = duration_stats['format_duration'](duration_str, duration_sec)
+                else:
+                    duration = duration_str
             except:
                 duration = "Unknown"
 
@@ -280,6 +288,120 @@ class LogbookPreprocessor:
         context += "\n"
         return context
 
+    def calculate_duration_statistics(self, runs_data: Dict[int, List[Dict]]) -> Dict:
+        """
+        Calculate duration statistics across all runs in the experiment.
+        
+        Args:
+            runs_data: Dictionary mapping run_number to list of logbook entries
+            
+        Returns:
+            Dictionary containing duration statistics and categorization functions
+        """
+        durations = []
+        
+        # Calculate durations for all runs
+        for run_number, entries in runs_data.items():
+            if not entries:
+                continue
+                
+            first_entry = entries[0]
+            run_start = first_entry.get('run_start', 'Unknown')
+            run_end = first_entry.get('run_end', 'Unknown')
+            
+            if run_start and run_end and run_start != 'Unknown' and run_end != 'Unknown':
+                try:
+                    start_dt = datetime.fromisoformat(run_start.replace('Z', '+00:00'))
+                    end_dt = datetime.fromisoformat(run_end.replace('Z', '+00:00'))
+                    duration_sec = (end_dt - start_dt).total_seconds()
+                    if duration_sec > 0:  # Only include positive durations
+                        durations.append(duration_sec)
+                except:
+                    continue
+        
+        if not durations:
+            # No valid durations found
+            return {
+                'has_data': False,
+                'categorize_duration': lambda x: ('unknown', 0),
+                'format_duration': lambda x: x  # Return original duration string
+            }
+        
+        # Calculate robust statistics
+        durations.sort()
+        n = len(durations)
+        
+        # Calculate percentiles
+        def percentile(data, p):
+            k = (len(data) - 1) * p / 100
+            lower = int(k)
+            upper = min(lower + 1, len(data) - 1)
+            weight = k - lower
+            return data[lower] * (1 - weight) + data[upper] * weight
+        
+        p25 = percentile(durations, 25)
+        p50 = percentile(durations, 50)  # median
+        p75 = percentile(durations, 75)
+        p90 = percentile(durations, 90)
+        
+        def categorize_duration(duration_sec):
+            """Categorize duration and return category + percentile rank"""
+            if duration_sec <= 0:
+                return ('unknown', 0)
+            
+            # Calculate percentile rank
+            rank = sum(1 for d in durations if d <= duration_sec) * 100 / len(durations)
+            rank = min(100, max(1, int(rank)))  # Clamp to 1-100
+            
+            # Determine category
+            if duration_sec < p25:
+                category = 'very_short'
+            elif duration_sec < p50:
+                category = 'short'
+            elif duration_sec < p75:
+                category = 'medium'
+            elif duration_sec < p90:
+                category = 'long'
+            else:
+                category = 'very_long'
+                
+            return (category, rank)
+        
+        def format_duration_with_context(duration_str, duration_sec):
+            """Format duration string with relative context"""
+            if duration_sec <= 0:
+                return duration_str
+                
+            category, percentile_rank = categorize_duration(duration_sec)
+            
+            # Human-readable category names
+            category_names = {
+                'very_short': 'very short',
+                'short': 'short', 
+                'medium': 'medium',
+                'long': 'long',
+                'very_long': 'very long'
+            }
+            
+            readable_category = category_names.get(category, 'unknown')
+            return f"{duration_str} ({readable_category}, {percentile_rank}{self._ordinal_suffix(percentile_rank)} percentile)"
+        
+        return {
+            'has_data': True,
+            'total_runs': len(durations),
+            'median': p50,
+            'percentiles': {'p25': p25, 'p50': p50, 'p75': p75, 'p90': p90},
+            'categorize_duration': categorize_duration,
+            'format_duration': format_duration_with_context
+        }
+    
+    def _ordinal_suffix(self, n):
+        """Return ordinal suffix for a number (st, nd, rd, th)"""
+        if 10 <= n % 100 <= 20:
+            return 'th'
+        else:
+            return {1: 'st', 2: 'nd', 3: 'rd'}.get(n % 10, 'th')
+
     def process_experiment(self, experiment_id: str) -> str:
         """
         Process all runs for an experiment and create LLM-ready output.
@@ -296,6 +418,9 @@ class LogbookPreprocessor:
         if not runs_data:
             return f"# Experiment {experiment_id}\n\nNo logbook data found.\n"
 
+        # Calculate duration statistics for relative context
+        duration_stats = self.calculate_duration_statistics(runs_data)
+
         # Create header
         output = f"# Experiment {experiment_id} - Logbook Analysis\n\n"
         output += f"**Total runs with logbook entries**: {len(runs_data)}\n\n"
@@ -304,7 +429,7 @@ class LogbookPreprocessor:
         # Process each run
         for run_number in sorted(runs_data.keys()):
             entries = runs_data[run_number]
-            run_context = self.create_run_context(run_number, entries)
+            run_context = self.create_run_context(run_number, entries, duration_stats)
             output += run_context
 
         return output

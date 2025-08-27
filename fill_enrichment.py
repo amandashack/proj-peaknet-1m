@@ -110,7 +110,8 @@ def generate_output_path(enrichment_file: Path) -> Path:
     # Extract experiment ID from filename
     filename = enrichment_file.name
     if filename.endswith('_enrichment.md'):
-        exp_id = filename[:-15]  # Remove '_enrichment.md'
+        suffix_start = filename.rfind('_enrichment.md')
+        exp_id = filename[:suffix_start]
         output_filename = f"{exp_id}_full_enrichment.md"
     else:
         # Fallback if filename doesn't match expected pattern

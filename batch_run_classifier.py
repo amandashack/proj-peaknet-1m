@@ -5,6 +5,9 @@ LCLS Batch Classifier
 General-purpose script that runs run_classifier.py sequentially on experiments 
 from a CSV file, saving results to a specified directory. Works with any 
 experiment type (crystallography, protein, materials, etc.).
+
+Includes fault tolerance options to handle API failures gracefully and 
+resume processing from partial progress without losing work.
 """
 
 import argparse
@@ -24,6 +27,9 @@ Examples:
   # Process all experiments from CSV
   python batch_run_classifier.py experiments.csv
 
+  # Process with fault tolerance (recommended for large batches)
+  python batch_run_classifier.py experiments.csv --resume --timeout 2400
+
   # Process crystallography experiments (backward compatibility)
   python batch_run_classifier.py crystallography.csv --output-dir batch_crystallography_results
 
@@ -32,6 +38,9 @@ Examples:
 
   # Force overwrite existing results
   python batch_run_classifier.py my_experiments.csv --force
+
+  # Resume interrupted processing with extended timeout
+  python batch_run_classifier.py large_experiments.csv --resume --timeout 3600
         """
     )
 
@@ -48,6 +57,12 @@ Examples:
                        help='Maximum number of experiments to process (default: all)')
     parser.add_argument('--force', action='store_true',
                        help='Overwrite existing output files')
+    
+    # Fault tolerance options
+    parser.add_argument('--resume', action='store_true',
+                       help='Enable fault tolerance - continue processing despite API failures and resume from partial progress')
+    parser.add_argument('--timeout', type=int, default=1800,
+                       help='Timeout per experiment in seconds (default: 1800 = 30 min). Use 2400+ for large experiments')
 
     args = parser.parse_args()
 
@@ -63,6 +78,10 @@ Examples:
     output_path = Path(args.output_dir)
     output_path.mkdir(exist_ok=True)
     print(f"✓ Output directory: {args.output_dir}/")
+    if args.resume:
+        print(f"✓ Fault tolerance enabled - will continue on API failures and resume from partial progress")
+    if args.timeout != 1800:
+        print(f"✓ Timeout per experiment: {args.timeout} seconds ({args.timeout//60} minutes)")
 
     # Read experiment IDs from CSV
     experiment_ids = []
@@ -114,9 +133,13 @@ Examples:
                 str(enrichment_file),
                 "-o", str(output_file)
             ]
+            
+            # Add fault tolerance flag if requested
+            if args.resume:
+                cmd.append("--resume")
 
             print(f"  🚀 Running: {' '.join(cmd)}")
-            result = subprocess.run(cmd, capture_output=True, text=True, timeout=600)
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=args.timeout)
 
             if result.returncode == 0:
                 print(f"  ✅ Completed: {output_file}")
@@ -125,10 +148,17 @@ Examples:
                 print(f"  ❌ Failed with return code {result.returncode}")
                 if result.stderr:
                     print(f"     Error: {result.stderr.strip()}")
+                # Check if partial results were produced despite failure
+                if output_file.exists():
+                    print(f"     Note: Partial results may be available at {output_file}")
+                    if args.resume:
+                        print(f"     Use --resume to continue from partial progress")
                 skipped_count += 1
 
         except subprocess.TimeoutExpired:
-            print(f"  ⏰ Timeout after 10 minutes - skipping {exp_id}")
+            print(f"  ⏰ Timeout after {args.timeout//60} minutes - skipping {exp_id}")
+            if args.resume:
+                print(f"     Note: Use --resume to continue from partial progress if available")
             skipped_count += 1
         except Exception as e:
             print(f"  ❌ Error running classifier: {e}")
@@ -151,6 +181,11 @@ Examples:
 
         print(f"\n🔄 To create fully enriched documents:")
         print(f"   python batch_fill_enrichment.py --classification-dir {args.output_dir}")
+
+    if skipped_count > 0 and args.resume:
+        print(f"\n♾️ To retry failed experiments with fault tolerance:")
+        print(f"   python batch_run_classifier.py {args.csv_file} --output-dir {args.output_dir} --resume --timeout {max(args.timeout, 2400)}")
+        print(f"   # Increase timeout for problematic experiments")
 
 
 if __name__ == "__main__":
