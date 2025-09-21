@@ -1,0 +1,2850 @@
+{
+  "experiment_id": "tmox1016823_full_enrichment",
+  "source_file": "tmox1016823_full_enrichment.md",
+  "reviewer": "ajshack",
+  "started_at": "2025-09-19T16:19:18.433493",
+  "last_updated": "2025-09-21T14:03:39.271530",
+  "stats": {
+    "total_runs": 377,
+    "validated_runs": 377,
+    "corrections_made": 79,
+    "accuracy_rate": 79.04509283819628
+  },
+  "validations": {
+    "1": {
+      "original": "commissioning_run",
+      "validated": "test_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "2": {
+      "original": "diagnostic_run",
+      "validated": "test_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "3": {
+      "original": "commissioning_run",
+      "validated": "test_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "4": {
+      "original": "commissioning_run",
+      "validated": "test_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "5": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "6": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "7": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "8": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "9": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "10": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "11": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "12": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "13": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "14": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "15": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "16": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "17": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 12 runs"
+    },
+    "18": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "manual",
+      "notes": "DAQ Crashing, failed run"
+    },
+    "19": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "20": {
+      "original": "commissioning_run",
+      "validated": "diagnostic_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "21": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "22": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "23": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "24": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "25": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "26": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "27": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "28": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 7 runs"
+    },
+    "29": {
+      "original": "alignment_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "30": {
+      "original": "alignment_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "31": {
+      "original": "alignment_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "32": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "33": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "34": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "35": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "36": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "37": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "38": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "39": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "40": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "41": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "42": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "43": {
+      "original": "calibration_run",
+      "validated": "diagnostic_run",
+      "method": "manual",
+      "notes": "now we are setting up the FZP to do the retardation scans is in the logbook for this run so this is a diagnostic run because they are testing the fzp spectrometer"
+    },
+    "44": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 3 runs"
+    },
+    "45": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 3 runs"
+    },
+    "46": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 3 runs"
+    },
+    "47": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "manual",
+      "notes": "FEX adjustments are indeed a diagnostic run!"
+    },
+    "48": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "49": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "50": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "51": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "52": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "53": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "54": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "55": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "56": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "57": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "58": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "59": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "60": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "61": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "62": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "63": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "64": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "65": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "66": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "67": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "68": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "69": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "70": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "71": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "72": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "73": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "74": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "75": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "76": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "77": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "78": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "79": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "80": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "81": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "82": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "83": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 36 runs"
+    },
+    "84": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "85": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "86": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "87": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "88": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "89": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "90": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "91": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "92": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "93": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "94": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "95": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "96": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "97": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 14 runs"
+    },
+    "98": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "99": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "100": {
+      "original": "alignment_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "101": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "102": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "103": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "104": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "105": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "106": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "107": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "108": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "109": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "110": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "111": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "112": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "113": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "114": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "115": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "116": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "117": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "118": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "119": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "120": {
+      "original": "commissioning_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Laser only shift -- No beam so not sure that this needs to be categorized, or maybe should be labeled as laser only. I know that is there is no beam because before run 101 it says \"This is the starting configuration of the VAT valve for the laser shift\" and laser shift means no beam. Then run 120 says \"Start of shift 3 for mrco commissioning ...\" So everything in between is laser shift."
+    },
+    "121": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "122": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "manual",
+      "notes": "Argon is a calibration gas, this will most likely never be a measurement run when Argon is the sample gas."
+    },
+    "123": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "124": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "125": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "126": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "127": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "128": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "129": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "130": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "131": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "132": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "133": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "134": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "135": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "136": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "137": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "138": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "139": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "140": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "141": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "142": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "143": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "144": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "145": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "146": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "147": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "148": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "149": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "150": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "151": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "152": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "153": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "154": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "155": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "156": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "157": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "158": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "159": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "160": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "161": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "162": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "163": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "164": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "165": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "166": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "167": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "168": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 46 runs"
+    },
+    "169": {
+      "original": "timing_run",
+      "validated": "alignment_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "170": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "171": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "172": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "173": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "174": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 5 runs"
+    },
+    "175": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "176": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "177": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "178": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "179": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "180": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "181": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "182": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "183": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "184": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "185": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "186": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "187": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "188": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "189": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "190": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "191": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "192": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "193": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "194": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "195": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "196": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "197": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "198": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "199": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "200": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "201": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 27 runs"
+    },
+    "202": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "203": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "204": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "205": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "206": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "207": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "208": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "209": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "210": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "211": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "212": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "213": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "214": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "215": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "216": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "217": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "218": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "219": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "220": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "221": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "222": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 21 runs"
+    },
+    "223": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "224": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "225": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "226": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "227": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "228": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "229": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "230": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "231": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "232": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "233": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "234": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "236": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "237": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "238": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "239": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "240": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "241": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "243": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "244": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Z scan is for focus so it is an alignment run"
+    },
+    "245": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "246": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "247": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "248": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "249": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "250": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "251": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "252": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "253": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 9 runs"
+    },
+    "254": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "255": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "256": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "257": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "258": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "259": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "260": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "261": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "262": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "263": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "264": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "265": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "266": {
+      "original": "alignment_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 13 runs"
+    },
+    "267": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "268": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "269": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "270": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "271": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "272": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "273": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "274": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "275": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "276": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "277": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "278": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "279": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "280": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "281": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "282": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "283": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "284": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "285": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "286": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "287": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "288": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "289": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "290": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "291": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "292": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "293": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "294": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "295": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "296": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "297": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "298": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "299": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "300": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "301": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "302": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "303": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 37 runs"
+    },
+    "304": {
+      "original": "calibration_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "needle scan"
+    },
+    "305": {
+      "original": "calibration_run",
+      "validated": "alignment_run",
+      "method": "group_validation",
+      "notes": "needle scan"
+    },
+    "306": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "307": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "308": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "309": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "310": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "311": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "312": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "313": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "314": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "315": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "316": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "317": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "318": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "319": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "320": {
+      "original": "calibration_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "321": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "322": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "323": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "324": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "325": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "326": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "327": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "328": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "329": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "330": {
+      "original": "calibration_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO for beta parameters"
+    },
+    "331": {
+      "original": "diagnostic_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "332": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "333": {
+      "original": "measurement_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "334": {
+      "original": "diagnostic_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "335": {
+      "original": "diagnostic_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "336": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "337": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "338": {
+      "original": "calibration_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "339": {
+      "original": "diagnostic_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "340": {
+      "original": "commissioning_run",
+      "validated": "unknown_run",
+      "method": "group_validation",
+      "notes": "XLEAP Tuning shift"
+    },
+    "341": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 3 runs"
+    },
+    "342": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 3 runs"
+    },
+    "343": {
+      "original": "calibration_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 3 runs"
+    },
+    "344": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "345": {
+      "original": "diagnostic_run",
+      "validated": "diagnostic_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 2 runs"
+    },
+    "346": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Argon is the gas"
+    },
+    "347": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Argon is the gas"
+    },
+    "348": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Argon is the gas"
+    },
+    "349": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Argon is the gas"
+    },
+    "351": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "352": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "353": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "354": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "355": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "356": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "357": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "358": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "359": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "360": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "361": {
+      "original": "measurement_run",
+      "validated": "calibration_run",
+      "method": "group_validation",
+      "notes": "Gas is Argon"
+    },
+    "362": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO retardation and photon energy scan"
+    },
+    "363": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO retardation and photon energy scan"
+    },
+    "364": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO retardation and photon energy scan"
+    },
+    "365": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO retardation and photon energy scan"
+    },
+    "366": {
+      "original": "measurement_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO retardation and photon energy scan"
+    },
+    "367": {
+      "original": "timing_run",
+      "validated": "measurement_run",
+      "method": "group_validation",
+      "notes": "NNO retardation and photon energy scan"
+    },
+    "368": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "369": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "370": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "371": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "372": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "373": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "374": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "375": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "376": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "377": {
+      "original": "timing_run",
+      "validated": "timing_run",
+      "method": "group_validation",
+      "notes": "Group validation applied to 10 runs"
+    },
+    "235": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "242": {
+      "original": "unknown_run",
+      "validated": "unknown_run",
+      "method": "manual",
+      "notes": ""
+    },
+    "350": {
+      "original": "diagnostic_run",
+      "validated": "unknown_run",
+      "method": "manual",
+      "notes": ""
+    }
+  },
+  "bulk_operations": [
+    {
+      "pattern": "Group validation: 12 runs \u2192 calibration_run",
+      "applied_to": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "timestamp": "2025-09-21T10:13:15.099870",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 2 runs \u2192 diagnostic_run",
+      "applied_to": [
+        19,
+        20
+      ],
+      "timestamp": "2025-09-21T10:49:35.064414",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 7 runs \u2192 alignment_run",
+      "applied_to": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28
+      ],
+      "timestamp": "2025-09-21T10:51:17.789084",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 5 runs \u2192 calibration_run",
+      "applied_to": [
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "timestamp": "2025-09-21T10:53:18.883221",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 9 runs \u2192 commissioning_run",
+      "applied_to": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "timestamp": "2025-09-21T11:06:27.419081",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 3 runs \u2192 calibration_run",
+      "applied_to": [
+        44,
+        45,
+        46
+      ],
+      "timestamp": "2025-09-21T11:14:40.523925",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 9 runs \u2192 calibration_run",
+      "applied_to": [
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "timestamp": "2025-09-21T12:53:32.523925",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 36 runs \u2192 alignment_run",
+      "applied_to": [
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83
+      ],
+      "timestamp": "2025-09-21T12:57:37.613116",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 14 runs \u2192 calibration_run",
+      "applied_to": [
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ],
+      "timestamp": "2025-09-21T13:00:25.607997",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 2 runs \u2192 diagnostic_run",
+      "applied_to": [
+        98,
+        99
+      ],
+      "timestamp": "2025-09-21T13:01:47.575686",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 21 runs \u2192 unknown_run",
+      "applied_to": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "timestamp": "2025-09-21T13:10:27.116047",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 46 runs \u2192 alignment_run",
+      "applied_to": [
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168
+      ],
+      "timestamp": "2025-09-21T13:15:15.300199",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 5 runs \u2192 calibration_run",
+      "applied_to": [
+        170,
+        171,
+        172,
+        173,
+        174
+      ],
+      "timestamp": "2025-09-21T13:20:27.338006",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 27 runs \u2192 alignment_run",
+      "applied_to": [
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "timestamp": "2025-09-21T13:22:18.739110",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 21 runs \u2192 calibration_run",
+      "applied_to": [
+        202,
+        203,
+        204,
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220,
+        221,
+        222
+      ],
+      "timestamp": "2025-09-21T13:28:38.315453",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 2 runs \u2192 unknown_run",
+      "applied_to": [
+        223,
+        224
+      ],
+      "timestamp": "2025-09-21T13:29:26.560263",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 15 runs \u2192 calibration_run",
+      "applied_to": [
+        228,
+        229,
+        230,
+        231,
+        232,
+        233,
+        234,
+        236,
+        237,
+        238,
+        239,
+        240,
+        241,
+        243,
+        244
+      ],
+      "timestamp": "2025-09-21T13:35:36.962887",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 9 runs \u2192 calibration_run",
+      "applied_to": [
+        245,
+        246,
+        247,
+        248,
+        249,
+        250,
+        251,
+        252,
+        253
+      ],
+      "timestamp": "2025-09-21T13:36:46.185686",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 13 runs \u2192 alignment_run",
+      "applied_to": [
+        254,
+        255,
+        256,
+        257,
+        258,
+        259,
+        260,
+        261,
+        262,
+        263,
+        264,
+        265,
+        266
+      ],
+      "timestamp": "2025-09-21T13:37:11.453938",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 37 runs \u2192 calibration_run",
+      "applied_to": [
+        267,
+        268,
+        269,
+        270,
+        271,
+        272,
+        273,
+        274,
+        275,
+        276,
+        277,
+        278,
+        279,
+        280,
+        281,
+        282,
+        283,
+        284,
+        285,
+        286,
+        287,
+        288,
+        289,
+        290,
+        291,
+        292,
+        293,
+        294,
+        295,
+        296,
+        297,
+        298,
+        299,
+        300,
+        301,
+        302,
+        303
+      ],
+      "timestamp": "2025-09-21T13:39:43.011084",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 2 runs \u2192 alignment_run",
+      "applied_to": [
+        304,
+        305
+      ],
+      "timestamp": "2025-09-21T13:40:32.291756",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 25 runs \u2192 measurement_run",
+      "applied_to": [
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        312,
+        313,
+        314,
+        315,
+        316,
+        317,
+        318,
+        319,
+        320,
+        321,
+        322,
+        323,
+        324,
+        325,
+        326,
+        327,
+        328,
+        329,
+        330
+      ],
+      "timestamp": "2025-09-21T13:52:40.112214",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 10 runs \u2192 unknown_run",
+      "applied_to": [
+        331,
+        332,
+        333,
+        334,
+        335,
+        336,
+        337,
+        338,
+        339,
+        340
+      ],
+      "timestamp": "2025-09-21T13:54:52.335541",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 3 runs \u2192 calibration_run",
+      "applied_to": [
+        341,
+        342,
+        343
+      ],
+      "timestamp": "2025-09-21T13:55:23.659070",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 2 runs \u2192 diagnostic_run",
+      "applied_to": [
+        344,
+        345
+      ],
+      "timestamp": "2025-09-21T13:55:41.588518",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 4 runs \u2192 calibration_run",
+      "applied_to": [
+        346,
+        347,
+        348,
+        349
+      ],
+      "timestamp": "2025-09-21T13:56:23.917441",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 11 runs \u2192 calibration_run",
+      "applied_to": [
+        351,
+        352,
+        353,
+        354,
+        355,
+        356,
+        357,
+        358,
+        359,
+        360,
+        361
+      ],
+      "timestamp": "2025-09-21T13:57:24.010350",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 6 runs \u2192 measurement_run",
+      "applied_to": [
+        362,
+        363,
+        364,
+        365,
+        366,
+        367
+      ],
+      "timestamp": "2025-09-21T13:58:11.470703",
+      "method": "group_validation"
+    },
+    {
+      "pattern": "Group validation: 10 runs \u2192 timing_run",
+      "applied_to": [
+        368,
+        369,
+        370,
+        371,
+        372,
+        373,
+        374,
+        375,
+        376,
+        377
+      ],
+      "timestamp": "2025-09-21T13:58:33.525727",
+      "method": "group_validation"
+    }
+  ]
+}

@@ -439,7 +439,7 @@ def main():
     """Main entry point for the preprocessing script."""
     parser = argparse.ArgumentParser(description='Preprocess LCLS logbook data for LLM enrichment')
     parser.add_argument('--experiment', required=True, help='Experiment ID (e.g., mfxl1027922)')
-    parser.add_argument('--database', default='2025_0813_2257.db', help='Database file path')
+    parser.add_argument('--database', default='/sdf/data/lcls/ds/prj/prjcwang31/results/proj-peaknet-1m/2025_0813_2257.db', help='Database file path')
     parser.add_argument('--output', help='Output file path (default: stdout)')
 
     # Filtering options

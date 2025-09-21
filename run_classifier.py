@@ -18,7 +18,7 @@ from pathlib import Path
 import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from tqdm import tqdm
+# from tqdm import tqdm  # Removed dependency
 import logging
 
 
@@ -174,7 +174,7 @@ class RunClassifier:
             raise StanfordAPIError("Classifications must be an array")
 
         # Check each classification entry
-        valid_classifications = {"sample_run", "calibration_run", "alignment_run", "test_run", "commissioning_run", "unknown_run"}
+        valid_classifications = {"commissioning_run", "alignment_run", "timing_run", "calibration_run", "measurement_run", "diagnostic_run", "unknown_run"}
         valid_confidence = {"high", "medium", "low"}
 
         for i, classification in enumerate(data["classifications"]):
@@ -320,72 +320,81 @@ You are a scientific data analyst specializing in LCLS (Linac Coherent Light Sou
 
 Classify each run into exactly ONE of these categories based on its PRIMARY purpose:
 
-### 1. `sample_run`
-**Definition**: Runs where real biological, chemical, or material samples are measured/analyzed for scientific data collection.
+### 1. `commissioning_run`
+**Definition**: Initial system bring-up, detector setup, and equipment checkout for TMO instruments.
 
 **Key Indicators**:
-- Sample names, concentrations, or chemical formulas (e.g., "Fe(bpy)3", "10mM protein", "AgB")
-- Sample delivery mentions (injection rates, flow rates, pressure values)
-- Data collection on actual samples
-- Sample quality assessments ("good sample position", "out of sample")
-- Scientific measurement parameters
-- Sample preparation activities leading to measurement
+- MRCO detector commissioning ("ramp up", "checkout", "bias scan")
+- MCP gain optimization and tuning
+- Spectrometer setup and FZP commissioning
+- Beamline transmission checks and KB optics setup
+- Initial equipment bring-up without science data collection
+- "commission", "checkout", "setup", "bring up" mentions
 
-### 2. `calibration_run`
-**Definition**: Runs focused on detector calibration, dark measurements, or establishing baseline conditions.
-
-**Key Indicators**:
-- "DARK" entries (with or without capitalization)
-- Detector calibration activities ("pedestal", "gain settings")
-- Background measurements without samples
-- "takepeds", "makepeds" commands
-- Detector bad pixel analysis
-- Baseline establishment
-- Energy calibration (notch scans, monochromator adjustments)
-
-### 3. `alignment_run`
-**Definition**: Runs dedicated to beam alignment, optical positioning, or spatial calibration.
+### 2. `alignment_run`
+**Definition**: Spatial positioning of beam, detectors, and optical components.
 
 **Key Indicators**:
-- Beam pointing/positioning ("beam alignment", "mirror positions")
-- YAG screen usage for alignment
-- Motor positioning activities
-- Focus adjustments and optimization
-- Mirror/optics positioning
-- Wire scans for beam characterization
-- Spatial calibration activities
+- MRCO XY scans and beam centering activities
+- Focus positioning and spot size optimization
+- TOF detector positioning and angular coverage
+- Beam alignment with KB mirrors or other optics
+- Spatial overlap procedures (IR/X-ray on paddle)
+- "XY scan", "beam center", "focus", "position", "spatial overlap"
 
-### 4. `test_run`
-**Definition**: Runs for equipment testing, troubleshooting, or system verification (not including commissioning).
-
-**Key Indicators**:
-- Equipment testing ("injector testing", "testing PSL spheres")
-- Troubleshooting activities
-- System verification without samples
-- Performance testing
-- "test" or "testing" explicitly mentioned (without commissioning context)
-
-### 5. `commissioning_run`
-**Definition**: Runs for instrument commissioning, initial setup, or end station preparation.
+### 3. `timing_run`
+**Definition**: Temporal synchronization and overlap establishment for pump-probe experiments.
 
 **Key Indicators**:
-- "commissioning", "commission", "checkout" mentions
-- Initial instrument setup
-- End station preparation
-- System bring-up activities
-- Machine development (MD) activities
+- ATM timing procedures and t0 determination
+- LXT/TXT timing scans and delay stage movements
+- Coarse and fine timing optimization
+- Temporal overlap establishment (laser/X-ray)
+- "timing", "LXT scan", "TXT", "ATM", "t0", "temporal overlap"
 
-### 6. `unknown_run`
-**Definition**: Runs with insufficient, unclear, or contradictory information to classify confidently.
+### 4. `calibration_run`
+**Definition**: Detector calibration, spectral measurements, and system characterization.
+
+**Key Indicators**:
+- Retardation voltage scans and optimization
+- Photon energy scans for spectral calibration
+- FZP spectral reconstruction measurements
+- Resolution characterization and detector tuning
+- Background measurements and gain calibration
+- "retardation scan", "energy scan", "FZP", "spectral", "calibration"
+
+### 5. `measurement_run`
+**Definition**: Scientific data collection on samples for research purposes.
+
+**Key Indicators**:
+- TMO gas samples: CF4, NNO, Argon, Neon, CO2, N2
+- Angular streaking experiments with pump-probe
+- Photoelectron spectroscopy data collection
+- Scientific measurements with established parameters
+- Sample names with measurement context (not just setup)
+
+### 6. `diagnostic_run`
+**Definition**: System monitoring, troubleshooting, and performance verification.
+
+**Key Indicators**:
+- Signal checking and count rate monitoring
+- Transmission monitoring and system verification
+- Background measurements and noise characterization
+- Equipment status checks and parameter verification
+- "signal check", "count rate", "background", "transmission", "status"
+
+### 7. `unknown_run`
+**Definition**: Insufficient information to determine the primary purpose despite TMO context.
 
 ## Classification Strategy
 
-### Priority Rules
+### TMO Priority Rules
 When a run contains multiple activities, classify based on PRIMARY purpose:
-1. **Sample measurement** takes priority over setup activities
-2. **Calibration** takes priority over routine maintenance  
-3. **Alignment** takes priority over general testing
-4. **Commissioning** applies only to dedicated commissioning runs
+1. **Scientific measurement** takes priority over all setup activities
+2. **Timing activities** take priority over spatial alignment
+3. **Calibration activities** take priority over diagnostic checks
+4. **Alignment activities** take priority over commissioning setup
+5. **Commissioning** applies only to initial system bring-up phases
 
 ### Contextual Analysis and Workflow Logic
 
@@ -419,12 +428,31 @@ Use preceding context runs as an **active validation tool** for all classificati
 
 **Use `unknown_run` only when no discernible pattern exists despite available context.**
 
-## Scientific Domain Knowledge
+## TMO-Specific Domain Knowledge
 
-- **LCLS instruments**: AMO, CXI, MFX, MEC, XPP, XCS, RIX, TMO
-- **Common samples**: Proteins, crystals, foils, gases, liquids, nanoparticles
-- **Measurement types**: Diffraction, spectroscopy, imaging, scattering
-- **Equipment**: Detectors, motors, mirrors, injectors, YAG screens
+### TMO Instruments and Equipment:
+- **MRCO**: Multi-resolution coincidence detector with 16 TOF spectrometers
+- **ATM**: Attosecond timing module for pump-probe experiments
+- **XLEAP**: Two-color operation (ω/2ω, fundamental/harmonic modes)
+- **FZP**: Fresnel Zone Plate spectrometers for photon diagnostics
+- **KB Optics**: Kirkpatrick-Baez focusing mirrors
+- **TOF**: Time-of-flight electron spectrometers in angular arrangement
+
+### TMO Sample Types:
+- **Gas samples**: CF4 (carbon tetrafluoride), NNO (nitrous oxide), Argon, Neon, CO2, N2
+- **Target materials**: SiN windows, YAG screens, GaAs targets
+- **Energy range**: 400-1400 eV (soft X-ray regime)
+
+### TMO Measurement Types:
+- **Angular streaking**: Time-resolved photoelectron spectroscopy
+- **Pump-probe experiments**: IR laser pump, X-ray probe
+- **Coincidence spectroscopy**: Correlated electron and photon detection
+- **Retardation spectroscopy**: Voltage-tuned electron energy analysis
+
+### TMO Workflow Patterns:
+- **Sequential setup**: Commissioning → Alignment → Timing → Calibration → Measurement
+- **Pump-probe sequence**: Spatial overlap → Temporal overlap → Science measurements
+- **Detector optimization**: Bias tuning → Retardation scans → Count rate optimization
 
 ## Required Output (JSON only):
 
@@ -439,9 +467,9 @@ Use preceding context runs as an **active validation tool** for all classificati
   "classifications": [
     {{
       "run_number": {classify_start},
-      "classification": "calibration_run",
+      "classification": "timing_run",
       "confidence": "high",
-      "key_evidence": "DARK measurement and detector bad pixel analysis"
+      "key_evidence": "LXT timing scan and temporal overlap optimization"
     }}
     // Continue for runs {classify_start} through {classify_end} ONLY
   ]
@@ -580,8 +608,8 @@ IMPORTANT: Classify ONLY the NEW runs ({classify_start} through {classify_end}).
             self._initialize_output_file(output_file, experiment_id)
 
         # Process chunks
-        with tqdm(total=total_chunks, initial=start_chunk-1, desc="Processing chunks") as pbar:
-            for chunk_num in range(start_chunk, total_chunks + 1):
+        print(f"Processing {total_chunks} chunks starting from chunk {start_chunk}", file=sys.stderr)
+        for chunk_num in range(start_chunk, total_chunks + 1):
                 chunk_start_time = time.time()
 
                 try:
@@ -641,7 +669,7 @@ IMPORTANT: Classify ONLY the NEW runs ({classify_start} through {classify_end}).
                     if rate_limit > 0 and chunk_num < total_chunks:
                         time.sleep(rate_limit)
 
-                    pbar.update(1)
+                    # Progress update removed (tqdm dependency removed)
 
                 except Exception as e:
                     self.logger.error(f"Error processing chunk {chunk_num}: {e}")
@@ -651,7 +679,7 @@ IMPORTANT: Classify ONLY the NEW runs ({classify_start} through {classify_end}).
                             'runs': f"{new_runs[0]['run_number']}-{new_runs[-1]['run_number']}",
                             'error': str(e)
                         })
-                        pbar.update(1)
+                        # Progress update removed (tqdm dependency removed)
                         continue
                     else:
                         raise StanfordAPIError(f"Chunk {chunk_num} failed: {e}")

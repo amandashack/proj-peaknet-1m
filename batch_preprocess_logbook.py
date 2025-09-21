@@ -440,8 +440,8 @@ class BatchProcessor:
 def main():
     """Main entry point for batch processing."""
     parser = argparse.ArgumentParser(description='Batch process all LCLS experiments')
-    parser.add_argument('--database', default='2025_0813_2257.db', 
-                       help='Database file path (default: 2025_0813_2257.db)')
+    parser.add_argument('--database', default='/sdf/data/lcls/ds/prj/prjcwang31/results/proj-peaknet-1m/2025_0813_2257.db',
+                       help='Database file path (default: /sdf/data/lcls/ds/prj/prjcwang31/results/proj-peaknet-1m/2025_0813_2257.db)')
     parser.add_argument('--output-dir', default='processed_experiments',
                        help='Output directory for processed files (default: processed_experiments)')
     parser.add_argument('--limit', type=int,

@@ -1,0 +1,15 @@
+{
+  "experiment_id": "tmol1034523_full_enrichment",
+  "source_file": "tmol1034523_full_enrichment.md",
+  "reviewer": "ajshack",
+  "started_at": "2025-09-19T16:18:40.251321",
+  "last_updated": "2025-09-21T12:51:50.218999",
+  "stats": {
+    "total_runs": 123,
+    "validated_runs": 0,
+    "corrections_made": 0,
+    "accuracy_rate": 0
+  },
+  "validations": {},
+  "bulk_operations": []
+}
