@@ -85,12 +85,23 @@ SQLite Database (logbook entries)
 - Handles large-scale preprocessing operations
 
 ### Classification Categories
+
+#### Original LCLS Categories (Generic)
 - `sample_run`: Data collection on actual samples
 - `calibration_run`: Instrument calibration and setup
 - `alignment_run`: Beam/instrument alignment procedures
 - `test_run`: Equipment testing and validation
 - `commissioning_run`: Initial system commissioning
 - `unknown_run`: Unclear or insufficient information
+
+#### TMO-Specific Categories (Current)
+- `measurement_run`: Scientific data collection on samples
+- `calibration_run`: Instrument calibration and baseline establishment
+- `alignment_run`: Spatial beam/instrument alignment
+- `timing_run`: Temporal alignment and synchronization
+- `commissioning_run`: Initial system setup and commissioning
+- `diagnostic_run`: System testing and troubleshooting
+- `unknown_run`: Insufficient information for classification
 
 ### Data Flow
 
@@ -124,3 +135,40 @@ The pipeline includes sophisticated quality analysis to optimize API costs and c
 - **Garbage (>80% empty)**: ~18 experiments with minimal content (filter out)
 
 Filtering saves ~15% of API costs by excluding experiments that produce poor results.
+
+## TMO-Specific Implementation
+
+### TMO Instrument Focus
+This pipeline has been optimized for **TMO (Time-resolved Molecular and Optical Science)** experiments at LCLS. TMO specializes in:
+
+- **Pump-probe experiments**: IR laser pump, X-ray probe timing studies
+- **Photoelectron spectroscopy**: Angular-resolved electron detection
+- **Coincidence measurements**: Correlated electron and photon detection
+- **Attosecond timing**: Ultra-precise temporal alignment capabilities
+
+### TMO Equipment and Workflow
+- **MRCO**: Multi-resolution coincidence detector with 16 TOF spectrometers
+- **ATM**: Attosecond timing module for precise pump-probe synchronization
+- **FZP**: Fresnel Zone Plate spectrometers for photon diagnostics
+- **Retardation spectroscopy**: Voltage-tuned electron energy analysis
+
+### Classification Evolution
+
+#### Version History
+- **Original**: Generic LCLS categories (6 categories)
+- **TMO v1**: TMO-specific categories with 79% validation accuracy
+- **TMO v2**: Enhanced prompt with contextual rules and priority logic
+
+#### TMO v2 Improvements
+- **Priority keyword system**: High-priority terms override ambiguous context
+- **Contextual pattern rules**: Run number, duration, and sequence analysis
+- **Technical issue handling**: Classify by intended purpose, not outcome
+- **Special TMO cases**: Interleaved retardation mode, gas injection patterns
+
+### Performance Benchmarks
+- **TMO v1 Baseline**: 79% accuracy (298/377 correct, 79 corrections needed)
+- **TMO v2 Target**: 85-90% accuracy through improved disambiguation
+- **Key improvements**: Reduced `unknown_run` overuse, better measurement/calibration distinction
+
+### Validation Workflow
+Use the validation app at `/sdf/scratch/users/a/ajshack/dev/run-classification-validation-app/` for manual verification and accuracy measurement.

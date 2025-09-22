@@ -1,0 +1,371 @@
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix lcls: <https://lcls.slac.stanford.edu/ns/> .
+@prefix tmo: <https://lcls.slac.stanford.edu/tmo/ns/> .
+@prefix git: <https://github.com/ns/> .
+
+# =============================================================================
+# TMO Classification System Development - Complete Provenance Record
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# AGENTS (Who)
+# -----------------------------------------------------------------------------
+
+lcls:ajshack a prov:Person, prov:Agent ;
+    foaf:name "ajshack" ;
+    prov:actedOnBehalfOf lcls:stanford_university .
+
+lcls:claude_code a prov:SoftwareAgent ;
+    foaf:name "Claude Code" ;
+    prov:actedOnBehalfOf lcls:anthropic .
+
+lcls:stanford_ai_gateway a prov:SoftwareAgent ;
+    foaf:name "Stanford AI Gateway" ;
+    prov:actedOnBehalfOf lcls:stanford_university .
+
+lcls:stanford_university a prov:Organization ;
+    foaf:name "Stanford University" .
+
+lcls:anthropic a prov:Organization ;
+    foaf:name "Anthropic" .
+
+# -----------------------------------------------------------------------------
+# INITIAL DATA AND SETUP
+# -----------------------------------------------------------------------------
+
+# Original SQLite database
+lcls:logbook_database_2025_0813 a prov:Entity ;
+    prov:label "LCLS Logbook Database 2025-08-13" ;
+    prov:generatedAtTime "2025-08-13T22:57:00Z"^^xsd:dateTime ;
+    prov:wasAttributedTo lcls:lcls_daq_system ;
+    prov:atLocation "/sdf/data/lcls/ds/prj/prjcwang31/results/proj-peaknet-1m/2025_0813_2257.db" .
+
+# Initial codebase analysis request
+lcls:codebase_analysis_request a prov:Activity ;
+    prov:label "Initial codebase analysis and CLAUDE.md creation" ;
+    prov:startedAtTime "2025-09-19T16:19:18Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith lcls:ajshack, lcls:claude_code .
+
+# Git repository state
+lcls:git_repo_initial a prov:Entity ;
+    prov:label "Initial Git Repository State" ;
+    git:commit "f522df5" ;
+    git:branch "main" ;
+    prov:generatedAtTime "2025-09-19T16:19:18Z"^^xsd:dateTime .
+
+# -----------------------------------------------------------------------------
+# PREPROCESSING PHASE
+# -----------------------------------------------------------------------------
+
+# Preprocessed experiment data
+lcls:tmox1016823_enrichment a prov:Entity ;
+    prov:label "TMO experiment tmox1016823 preprocessed data" ;
+    prov:atLocation "processed_experiments/tmox1016823_enrichment.md" ;
+    prov:wasDerivedFrom lcls:logbook_database_2025_0813 .
+
+lcls:tmol1034523_enrichment a prov:Entity ;
+    prov:label "TMO experiment tmol1034523 preprocessed data" ;
+    prov:atLocation "processed_experiments/tmol1034523_enrichment.md" ;
+    prov:wasDerivedFrom lcls:logbook_database_2025_0813 .
+
+lcls:preprocessing_activity a prov:Activity ;
+    prov:label "Logbook data preprocessing" ;
+    prov:used lcls:logbook_database_2025_0813 ;
+    prov:generated lcls:tmox1016823_enrichment, lcls:tmol1034523_enrichment ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:startedAtTime "2025-09-19T17:30:00Z"^^xsd:dateTime .
+
+# -----------------------------------------------------------------------------
+# TMO v1 DEVELOPMENT
+# -----------------------------------------------------------------------------
+
+# Original LCLS prompt
+lcls:original_lcls_prompt a prov:Entity ;
+    prov:label "Original LCLS Classification Prompt" ;
+    tmo:categories "sample_run, calibration_run, alignment_run, test_run, commissioning_run, unknown_run" ;
+    prov:wasAttributedTo lcls:original_system_developers .
+
+# TMO-specific analysis
+lcls:tmo_domain_analysis a prov:Activity ;
+    prov:label "TMO domain analysis and requirements gathering" ;
+    prov:startedAtTime "2025-09-19T18:00:00Z"^^xsd:dateTime ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:used lcls:tmo_documentation .
+
+lcls:tmo_documentation a prov:Entity ;
+    prov:label "TMO Shift Plans and Documentation" ;
+    prov:wasAttributedTo lcls:tmo_beamline_team .
+
+# TMO v1 prompt creation
+lcls:tmo_v1_prompt a prov:Entity ;
+    prov:label "TMO v1 Classification Prompt" ;
+    tmo:categories "commissioning_run, alignment_run, timing_run, calibration_run, measurement_run, diagnostic_run, unknown_run" ;
+    prov:wasRevisionOf lcls:original_lcls_prompt ;
+    prov:wasDerivedFrom lcls:tmo_domain_analysis ;
+    prov:wasAttributedTo lcls:claude_code ;
+    prov:generatedAtTime "2025-09-19T20:00:00Z"^^xsd:dateTime .
+
+# Git branch for v1
+lcls:git_branch_tmo_v1 a prov:Entity ;
+    prov:label "Git Branch wip/tmo_prompt_v1" ;
+    git:branch "wip/tmo_prompt_v1" ;
+    prov:wasDerivedFrom lcls:git_repo_initial ;
+    prov:generatedAtTime "2025-09-20T10:00:00Z"^^xsd:dateTime .
+
+# TMO v1 classification run
+lcls:tmo_v1_classification_activity a prov:Activity ;
+    prov:label "TMO v1 Classification of tmox1016823" ;
+    prov:used lcls:tmox1016823_enrichment, lcls:tmo_v1_prompt ;
+    prov:wasAssociatedWith lcls:stanford_ai_gateway ;
+    prov:startedAtTime "2025-09-20T14:30:00Z"^^xsd:dateTime ;
+    prov:endedAtTime "2025-09-20T14:45:00Z"^^xsd:dateTime ;
+    tmo:model "claude-3-7-sonnet" ;
+    tmo:temperature "0.1" ;
+    tmo:total_tokens "108877" .
+
+lcls:tmo_v1_classifications a prov:Entity ;
+    prov:label "TMO v1 Classification Results for tmox1016823" ;
+    prov:atLocation "results/tmo_v1/classifications/tmox1016823_classifications.json" ;
+    prov:wasGeneratedBy lcls:tmo_v1_classification_activity ;
+    tmo:total_runs "377" ;
+    tmo:accuracy_estimate "79%" .
+
+# -----------------------------------------------------------------------------
+# VALIDATION PHASE
+# -----------------------------------------------------------------------------
+
+# Validation application setup
+lcls:validation_app_update a prov:Activity ;
+    prov:label "Update validation app with TMO categories" ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:used lcls:validation_app_original ;
+    prov:generated lcls:validation_app_tmo ;
+    prov:startedAtTime "2025-09-20T16:00:00Z"^^xsd:dateTime .
+
+lcls:validation_app_tmo a prov:Entity ;
+    prov:label "TMO-enabled validation application" ;
+    prov:atLocation "/sdf/scratch/users/a/ajshack/dev/run-classification-validation-app/" ;
+    prov:wasDerivedFrom lcls:validation_app_original .
+
+# Human validation process
+lcls:human_validation_activity a prov:Activity ;
+    prov:label "Human validation of TMO v1 classifications" ;
+    prov:used lcls:tmo_v1_classifications ;
+    prov:wasAssociatedWith lcls:ajshack ;
+    prov:startedAtTime "2025-09-19T16:19:18Z"^^xsd:dateTime ;
+    prov:endedAtTime "2025-09-21T14:03:39Z"^^xsd:dateTime .
+
+lcls:validation_results a prov:Entity ;
+    prov:label "Human validation results for tmox1016823" ;
+    prov:atLocation "results/tmo_v1/validations/tmox1016823_full_enrichment_validation.json" ;
+    prov:wasGeneratedBy lcls:human_validation_activity ;
+    tmo:total_runs "377" ;
+    tmo:corrections_made "79" ;
+    tmo:accuracy_rate "79.04509283819628" .
+
+# Performance analysis
+lcls:v1_performance_analysis a prov:Activity ;
+    prov:label "TMO v1 performance analysis" ;
+    prov:used lcls:tmo_v1_classifications, lcls:validation_results ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:generated lcls:v1_performance_report .
+
+lcls:v1_performance_report a prov:Entity ;
+    prov:label "TMO v1 Performance Analysis Report" ;
+    prov:atLocation "results/tmo_v1/TMO_Performance_Comparison_tmox1016823.md" ;
+    prov:wasGeneratedBy lcls:v1_performance_analysis .
+
+# -----------------------------------------------------------------------------
+# TMO v2 DEVELOPMENT
+# -----------------------------------------------------------------------------
+
+# v2 requirements analysis
+lcls:v2_requirements_analysis a prov:Activity ;
+    prov:label "Analysis of validation feedback for v2 improvements" ;
+    prov:used lcls:validation_results ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:generated lcls:v2_improvement_plan .
+
+lcls:v2_improvement_plan a prov:Entity ;
+    prov:label "TMO v2 Improvement Instructions" ;
+    prov:atLocation "TMO_PROMPT_V2_INSTRUCTIONS.md" ;
+    prov:wasDerivedFrom lcls:validation_results ;
+    prov:wasAttributedTo lcls:claude_code .
+
+# Git branch for v2
+lcls:git_branch_tmo_v2 a prov:Entity ;
+    prov:label "Git Branch wip/tmo_prompt_v2" ;
+    git:branch "wip/tmo_prompt_v2" ;
+    prov:wasDerivedFrom lcls:git_branch_tmo_v1 ;
+    prov:generatedAtTime "2025-09-21T15:00:00Z"^^xsd:dateTime .
+
+# TMO v2 prompt development
+lcls:tmo_v2_prompt a prov:Entity ;
+    prov:label "TMO v2 Enhanced Classification Prompt" ;
+    prov:wasRevisionOf lcls:tmo_v1_prompt ;
+    prov:wasDerivedFrom lcls:v2_improvement_plan ;
+    prov:wasAttributedTo lcls:claude_code ;
+    prov:generatedAtTime "2025-09-21T15:30:00Z"^^xsd:dateTime ;
+    tmo:enhancements "priority_keywords, contextual_patterns, technical_issue_handling" .
+
+# TMO v2 classification run
+lcls:tmo_v2_classification_activity a prov:Activity ;
+    prov:label "TMO v2 Classification of tmox1016823" ;
+    prov:used lcls:tmox1016823_enrichment, lcls:tmo_v2_prompt ;
+    prov:wasAssociatedWith lcls:stanford_ai_gateway ;
+    prov:startedAtTime "2025-09-21T22:46:37Z"^^xsd:dateTime ;
+    prov:endedAtTime "2025-09-21T22:56:00Z"^^xsd:dateTime ;
+    tmo:model "claude-3-7-sonnet" ;
+    tmo:total_tokens "110877" .
+
+lcls:tmo_v2_classifications a prov:Entity ;
+    prov:label "TMO v2 Classification Results for tmox1016823" ;
+    prov:atLocation "results/tmo_v2/classifications/tmox1016823_classifications.json" ;
+    prov:wasGeneratedBy lcls:tmo_v2_classification_activity ;
+    tmo:total_runs "377" .
+
+# -----------------------------------------------------------------------------
+# TMO v3 DEVELOPMENT
+# -----------------------------------------------------------------------------
+
+# Detailed validation analysis
+lcls:validation_pattern_analysis a prov:Activity ;
+    prov:label "Detailed analysis of validation patterns and notes" ;
+    prov:used lcls:validation_results ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:startedAtTime "2025-09-21T17:10:00Z"^^xsd:dateTime .
+
+# Git branch for v3
+lcls:git_branch_tmo_v3 a prov:Entity ;
+    prov:label "Git Branch wip/tmo_prompt_v3" ;
+    git:branch "wip/tmo_prompt_v3" ;
+    prov:wasDerivedFrom lcls:git_branch_tmo_v2 ;
+    prov:generatedAtTime "2025-09-21T17:15:00Z"^^xsd:dateTime .
+
+# TMO v3 prompt with validation-based rules
+lcls:tmo_v3_prompt a prov:Entity ;
+    prov:label "TMO v3 Validation-Driven Classification Prompt" ;
+    prov:wasRevisionOf lcls:tmo_v2_prompt ;
+    prov:wasDerivedFrom lcls:validation_pattern_analysis ;
+    prov:wasAttributedTo lcls:claude_code ;
+    prov:generatedAtTime "2025-09-21T17:16:00Z"^^xsd:dateTime ;
+    tmo:validation_rules "argon_gas_rule, z_scan_rule, needle_scan_rule, early_run_override, system_failure_rule" .
+
+# TMO v3 classification run
+lcls:tmo_v3_classification_activity a prov:Activity ;
+    prov:label "TMO v3 Classification of tmox1016823" ;
+    prov:used lcls:tmox1016823_enrichment, lcls:tmo_v3_prompt ;
+    prov:wasAssociatedWith lcls:stanford_ai_gateway ;
+    prov:startedAtTime "2025-09-21T17:17:00Z"^^xsd:dateTime ;
+    prov:endedAtTime "2025-09-21T17:24:00Z"^^xsd:dateTime ;
+    tmo:model "claude-3-7-sonnet" .
+
+lcls:tmo_v3_classifications a prov:Entity ;
+    prov:label "TMO v3 Classification Results for tmox1016823" ;
+    prov:atLocation "results/tmo_v3/classifications/tmox1016823_classifications.json" ;
+    prov:wasGeneratedBy lcls:tmo_v3_classification_activity ;
+    tmo:total_runs "377" .
+
+# -----------------------------------------------------------------------------
+# COMPARATIVE ANALYSIS
+# -----------------------------------------------------------------------------
+
+# Version comparison activities
+lcls:v1_v2_comparison a prov:Activity ;
+    prov:label "TMO v1 vs v2 Performance Comparison" ;
+    prov:used lcls:tmo_v1_classifications, lcls:tmo_v2_classifications, lcls:validation_results ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:generated lcls:v1_v2_comparison_report .
+
+lcls:v1_v2_comparison_report a prov:Entity ;
+    prov:label "TMO v1 vs v2 Comparison Report" ;
+    prov:atLocation "results/tmo_v2/TMO_Performance_Comparison_tmox1016823.md" ;
+    prov:wasGeneratedBy lcls:v1_v2_comparison .
+
+lcls:three_version_analysis a prov:Activity ;
+    prov:label "Complete three-version performance analysis" ;
+    prov:used lcls:tmo_v1_classifications, lcls:tmo_v2_classifications, lcls:tmo_v3_classifications, lcls:validation_results ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:generated lcls:comprehensive_analysis_report .
+
+lcls:comprehensive_analysis_report a prov:Entity ;
+    prov:label "TMO Three-Version Performance Analysis" ;
+    prov:atLocation "TMO_Three_Version_Performance_Analysis.md" ;
+    prov:wasGeneratedBy lcls:three_version_analysis ;
+    tmo:v1_accuracy "79.0%" ;
+    tmo:v2_accuracy "78.8%" ;
+    tmo:v3_accuracy "77.7%" ;
+    tmo:recommendation "TMO v1 for production use" .
+
+# Documentation updates
+lcls:claude_md_update a prov:Activity ;
+    prov:label "CLAUDE.md documentation update with TMO-specific information" ;
+    prov:used lcls:comprehensive_analysis_report ;
+    prov:wasAssociatedWith lcls:claude_code ;
+    prov:generated lcls:claude_md_final .
+
+lcls:claude_md_final a prov:Entity ;
+    prov:label "Updated CLAUDE.md with TMO evolution history" ;
+    prov:atLocation "CLAUDE.md" ;
+    prov:wasRevisionOf lcls:claude_md_initial ;
+    prov:wasGeneratedBy lcls:claude_md_update .
+
+# -----------------------------------------------------------------------------
+# FINAL DELIVERABLES
+# -----------------------------------------------------------------------------
+
+# Complete results structure
+lcls:results_structure a prov:Entity ;
+    prov:label "Complete TMO classification results structure" ;
+    prov:atLocation "results/" ;
+    prov:wasDerivedFrom lcls:tmo_v1_classifications, lcls:tmo_v2_classifications, lcls:tmo_v3_classifications .
+
+# Provenance document (this file)
+lcls:provenance_document a prov:Entity ;
+    prov:label "Complete provenance record of TMO classification development" ;
+    prov:atLocation "provenance.ttl" ;
+    prov:wasGeneratedBy lcls:provenance_generation_activity ;
+    prov:wasAttributedTo lcls:claude_code ;
+    prov:generatedAtTime "2025-09-21T17:30:00Z"^^xsd:dateTime .
+
+lcls:provenance_generation_activity a prov:Activity ;
+    prov:label "Generation of complete provenance documentation" ;
+    prov:used lcls:comprehensive_analysis_report ;
+    prov:wasAssociatedWith lcls:claude_code .
+
+# -----------------------------------------------------------------------------
+# DERIVATION CHAINS (What came from what)
+# -----------------------------------------------------------------------------
+
+# Key derivation relationships
+lcls:tmo_v3_classifications prov:wasDerivedFrom lcls:tmo_v2_classifications,
+                                                lcls:validation_results ;
+                           prov:wasInfluencedBy lcls:human_validation_activity .
+
+lcls:comprehensive_analysis_report prov:wasDerivedFrom lcls:tmo_v1_classifications,
+                                                      lcls:tmo_v2_classifications,
+                                                      lcls:tmo_v3_classifications,
+                                                      lcls:validation_results .
+
+# Attribution chains
+lcls:tmo_v1_prompt prov:wasAttributedTo lcls:claude_code ;
+                   prov:wasInfluencedBy lcls:ajshack .
+
+lcls:validation_results prov:wasAttributedTo lcls:ajshack .
+
+lcls:tmo_v3_prompt prov:wasAttributedTo lcls:claude_code ;
+                   prov:wasInfluencedBy lcls:validation_results,
+                                       lcls:ajshack .
+
+# Quality metrics
+lcls:tmo_v1_classifications tmo:validated_accuracy "79.0%"^^xsd:double ;
+                           tmo:validation_method "human_expert" ;
+                           tmo:validator lcls:ajshack .
+
+lcls:tmo_v2_classifications tmo:estimated_accuracy "78.8%"^^xsd:double ;
+                           tmo:validation_method "comparative_analysis" .
+
+lcls:tmo_v3_classifications tmo:estimated_accuracy "77.7%"^^xsd:double ;
+                           tmo:validation_method "validation_rules_application" .
